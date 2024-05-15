@@ -198,7 +198,8 @@ document.addEventListener('alpine:init', () => {
                     for (const affix of item.affixPools) {
                         content += "        " + this.renderAffix(affix);
                     }
-                    content += "      minAffixCount: " + item.minAffixCount + "\n";
+                    content += "      count:\n";
+                    content += "      minCount: " + item.minCount + "\n";
                     content += "\n";
                 }
             }
