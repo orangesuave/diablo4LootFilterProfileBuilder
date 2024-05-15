@@ -200,10 +200,10 @@ document.addEventListener('alpine:init', () => {
                     content += "      itemType: [" + item.itemType.join(', ') + "]\n";
                     content += "      minPower: " + item.minPower + "\n";
                     content += "      affixPool:\n";
+                    content += "      count:\n";
                     for (const affix of item.affixPools) {
                         content += "        " + this.renderAffix(affix);
                     }
-                    content += "      count:\n";
                     content += "      minCount: " + item.minCount + "\n";
                     content += "\n";
                 }
@@ -216,9 +216,11 @@ document.addEventListener('alpine:init', () => {
                     content += "    minPower: " + item.minPower + "\n";
                     if (item.affixPools.length) {
                         content += "    affixPools:\n";
+                        content += "      count:\n";
                         for (const affix of item.affixPools) {
                             content += "      " + this.renderAffix(affix);
                         }
+                        content += "      minCount: " + item.minCount + "\n";
                     }
                     content += "\n";
                 }
@@ -276,7 +278,9 @@ document.addEventListener('alpine:init', () => {
                 unique: '',
                 value: '',
                 minPower : 850,
-                affixPools: []
+                affixPools: [],
+                count: ,
+                minCount: ''
             });
         }
     }));
